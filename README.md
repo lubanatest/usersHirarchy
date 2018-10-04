@@ -7,10 +7,10 @@
     
 <h3>Users Hirarchy</h3>
 
-<h3>Please nter the following information:</h3>
+<h3>Please enter the following information:</h3>
  
  <form name="myForm">
-  <table >
+  <table style="width:100%">
    <tr>
    <td >CSV File for Roles:</td>
    <td ><input type="file" name="roles" id="roles" onchange="" ng-model="csv" required/>
@@ -29,7 +29,7 @@
     <div id="fromError" ng-show="myForm.userID.$invalid">required</div></td>
   </tr>
    
-  <tr><td  colspan="2"><input type="button" onclick="validateForm()" value="Get SubOrdinators" /></td></tr>
+  <tr><td  colspan="2"><input type="button" onclick="getSubOrdinates()" value="Get SubOrdinators" /></td></tr>
   
   </table>
   
