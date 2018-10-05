@@ -5,24 +5,32 @@
     <script type="text/javascript" src="getSubOrdinators.js"></script>
     <script>
   
-  var roles = [];
-    var user = [];
-    
-  function readRoles() {
-          setRoles('roles', function(results) { console.log(results); roles = results;});
-  }
+      var roles = [];
+      var user = [];
+      /*
+       * readRoles
+       * Read CSV File and save the data into array
+       */
+      function readRoles() {
+              setRoles('roles', function(results) { console.log(results); roles = results;});
+      }
+      /*
+       * readUsers
+       * Read CSV File and save the data into array
+       */
+      function readUsers() {
+              setUsers('users', function(results) { console.log(results); users = results;});
+      }
   
-  function readUsers() {
-          setUsers('users', function(results) { console.log(results); users = results;});
-  }
-  
+      /*
+       * getSubOrdinators
+       */
+       
       function getResults() {
-        var userId = parseInt(document.forms["myForm"]["userId"].value);
+        var userId = document.forms["myForm"]["userId"].value;
 
         if (userId)
         {
-            console.log('**');
-      
           if (users !== undefined && roles !== undefined && roles.length > 0 && users.length > 0) {
           var result = getSubOrdinators(userId, users, roles);    
             console.log('results');
