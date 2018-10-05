@@ -48,11 +48,11 @@ function setRoles(fileName, callback)
 			// insert data into Tree
 			// -------------------------------
 			
-			var items = rows[i].split(",");
+			var items = rows[i].split(",").replace(/\"/g, "");
 			var id = items[0];
 			var name = items[1];
 			var parent = items[2];
-			console.log(id);
+			
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
 				roles.push(role);
@@ -91,7 +91,7 @@ function setUsers(fileName, callback)
 			// insert data into Tree
 			// -------------------------------
 			
-			var items = rows[i].split(",");
+			var items = rows[i].split(",").replace(/\"/g, "");
 			var id = JSON.parse(items[0]);
 			var name = JSON.parse(items[1]);
 			var role = JSON.parse(items[2]);
