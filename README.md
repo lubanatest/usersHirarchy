@@ -13,17 +13,15 @@
   
   if (userId)
   {
-  var roles = setRoles(rolesFile);
-  var users = setUsers(usersFile);
- 
-      console.log(roles);
-      console.log(users);
-      if (users !== undefined && roles !== undefined) {
+  var roles = setRoles(function(roles) { console.log(roles); });
+  var users = setUsers(function(users) { console.log(users); });
+  
+      /*if (users !== undefined && roles !== undefined) {
       var result = getSubOrdinators(userId, users, roles);     
       console.log(result);
       } else {
       console.log('error in the data');
-      }
+      }*/
    } 
    }
 </script>
@@ -39,19 +37,17 @@
   <table style="width:100%">
    <tr>
    <td >CSV File for Roles:</td>
-   <td ><input type="file" name="roles" id="roles" onchange="" ng-model="csv" required/>
-   <div id="csvError" ng-show="myForm.roles.$untouched">required</div>
+   <td ><input type="file" name="roles" id="roles" onchange="" ng-model="roles" required/>
    </td>
   </tr>
   <tr>
    <td >CSV File for Users:</td>
-   <td ><input type="file" name="users" id="users" onchange="" ng-model="csv" required/>
-   <div id="csvError" ng-show="myForm.users.$untouched">required</div>
+   <td ><input type="file" name="users" id="users" onchange="" required/>
    </td>
   </tr>
   <tr>
    <td >User ID: </td>
-   <td ><input type="text" name="userId" ng-model="from" value="3" required>
+   <td ><input type="text" name="userId" ng-model="userId" value="3" required>
     <div id="fromError" ng-show="myForm.userID.$invalid">required</div></td>
   </tr>
    
