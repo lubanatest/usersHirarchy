@@ -21,7 +21,7 @@ class Role
 	/*
    * Constructor
    */
-	constructor(id, name, paent){
+	constructor(id, name, parent){
 		this.id = id;
 		this.name = name;
 		this.parent = parent;
@@ -34,13 +34,16 @@ class Role
 function setRoles(file)
 {
 	console.log('set Roles');
+	console.log(file);
 	var roles = [];
 	
 	var fileUpload = document.getElementById(file);
+	console.log(fileUpload);
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
 		var text = e.target.result;
+		console.log('**');
 		console.log(text);
 		var rows = text.split("\n");		
 
