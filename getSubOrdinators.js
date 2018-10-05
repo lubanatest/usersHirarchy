@@ -7,9 +7,9 @@ class User
    * Constructor
    */
 	constructor(id, name, role){
-		this.id = id;
+		this.id = id.trim();
 		this.name = name;
-		this.role = role;
+		this.role = role.trim();
 	}
 }
 
@@ -22,9 +22,9 @@ class Role
    * Constructor
    */
 	constructor(id, name, parent){
-		this.id = id;
+		this.id = id.trim();
 		this.name = name;
-		this.parent = parent;
+		this.parent = parent.trim();
 	}
 }
 
@@ -92,9 +92,9 @@ function setUsers(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = JSON.parse(items[0]);
-			var name = JSON.parse(items[1]);
-			var role = JSON.parse(items[2]);
+			var id = items[0];
+			var name = items[1];
+			var role = items[2];
 			
 			if (id != "") {				 
 				var user = new User(id, name, role);
