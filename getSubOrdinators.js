@@ -49,9 +49,9 @@ function setRoles(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = items[0].trim();
-			var name = items[1].trim();
-			var parent = items[2].trim();
+			var id = items[0];
+			var name = items[1];
+			var parent = items[2];
 			
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
@@ -92,9 +92,9 @@ function setUsers(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = items[0].trim();
-			var name = items[1].trim();
-			var role = items[2].trim();
+			var id = items[0];
+			var name = items[1];
+			var role = items[2];
 			
 			if (id != "") {				 
 				var user = new User(id, name, role);
