@@ -43,6 +43,8 @@ Tree.prototype.add = function(role) {
 };
 
 Tree.prototype.findBFS = function(role) {
+  if (this.root === null)
+	return null;
   var queue = [this.root];
   while(queue.length) {
     var node = queue.shift();
