@@ -10,8 +10,10 @@
 
         if (userId)
         {
-          var roles = setRoles('roles', function(results) { console.log(results); return results;});
-          var users = setUsers('users', function(results) { console.log(results); return results;});
+          var roles = [];
+          var user = [];
+          setRoles('roles', function(results) { console.log(results); roles = results;});
+          setUsers('users', function(results) { console.log(results); users = results;});
 
           if (users !== undefined && roles !== undefined && roles.length > 0 && users.length > 0) {
           var result = getSubOrdinators(userId, users, roles);    
