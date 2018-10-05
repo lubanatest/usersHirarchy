@@ -94,6 +94,7 @@ function setUsers(file, callback)
 			// -------------------------------
 		}
 		// callback(graph); 
+}
 };
 
 /*
