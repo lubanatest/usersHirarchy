@@ -152,7 +152,7 @@ function setUsers(fileName, callback)
 function getSubOrdinators(userId, users, roles) {
 	console.log('sub ordinators');
   // Initialize the result array
-  var subOrdinators = [];
+  var results = [];
   
   // Get the role id of a user
   var roleId = getRoleId(userId, users);
@@ -165,7 +165,14 @@ function getSubOrdinators(userId, users, roles) {
     subOrdinators = getUsers(children[i].id, users);
     console.log(subOrdinators);
     for (var j = 0; j < subOrdinators.length; j++) {
-      // subOrdinators = [...subOrdinators, getSubOrdinators(subOrdinators[j].id, users, roles)];
+	results.push(subOrdinators[j]);
+      	var subSubOrdinators = getSubOrdinators(subOrdinators[j].id, users, roles);
+    console.log(' sub subOrdinators');
+    console.log(subSubOrdinators);
+	    
+    	for (var k = 0; j < subSubOrdinators.length; k++) {
+		results.push(subOrdinators[k]);
+	}   
     }
   }
   
