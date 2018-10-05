@@ -52,7 +52,7 @@ function setRoles(fileName, callback)
 			var id = JSON.parse(items[0]);
 			var name = JSON.parse(items[1]);
 			var parent = JSON.parse(items[2]);
-			
+			console.log(id);
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
 				roles.push(role);
