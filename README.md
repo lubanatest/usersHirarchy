@@ -18,9 +18,12 @@
  
       console.log(roles);
       console.log(users);
+      if (users && roles) {
       var result = getSubOrdinators(userId, users, roles);     
       console.log(result);
-  
+      } else {
+      console.log('error in the data');
+      }
    } 
    }
 </script>
