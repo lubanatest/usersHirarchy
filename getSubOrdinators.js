@@ -49,9 +49,9 @@ function setRoles(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = JSON.parse(items[0]);
-			var name = JSON.parse(items[1]);
-			var parent = JSON.parse(items[2]);
+			var id = items[0];
+			var name = items[1];
+			var parent = items[2];
 			console.log(id);
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
