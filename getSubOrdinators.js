@@ -163,6 +163,7 @@ function getSubOrdinators(userId, users, roles) {
   // For each child role get the users
   for (var i; i < children.length; i++) {
     subOrdinators = getUsers(i.id);
+	  console.log('heree');
     console.log(subOrdinators);
     for (var j; j < subOrdinators.length; j++) {
       subOrdinators = [...subOrdinators, getSubOrdinators(j.id, users, roles)];
