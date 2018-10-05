@@ -49,9 +49,9 @@ function setRoles(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = items[0];
-			var name = items[1];
-			var parent = items[2];
+			var id = items[0].trim();
+			var name = items[1].trim();
+			var parent = items[2].trim();
 			
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
@@ -92,9 +92,9 @@ function setUsers(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = items[0];
-			var name = items[1];
-			var role = items[2];
+			var id = items[0].trim();
+			var name = items[1].trim();
+			var role = items[2].trim();
 			
 			if (id != "") {				 
 				var user = new User(id, name, role);
@@ -149,15 +149,16 @@ function setUsers(fileName, callback)
  * Recursive Function to get a user subordinators.
  */
 function getSubOrdinators(userId, users, roles) {
+	console.log('sub ordinators');
   // Initialize the result array
   var subOrdinators = [];
   
   // Get the role id of a user
   var roleId = getRoleId(userId, users);
-  
+  console.log(roleId);
   // Get the Children roles of a role
   var children = getChildren(roleId, roles);
-  
+  console.log(children);
   // For each child role get the users
   for (var i; i < children.length; i++) {
     subOrdinators = getUsers(i);
