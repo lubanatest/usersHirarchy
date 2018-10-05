@@ -8,14 +8,14 @@
     
     <script>
   
-      var roles = [];
+      var roles = new Tree();
       var user = [];
       /*
        * readRoles
        * Read CSV File and save the data into array
        */
       function readRoles() {
-              setRoles('roles', function(results) { console.log(results); roles = results;});
+              setRoles('roles', function(results) { console.log(results.print()); roles = results;});
       }
       /*
        * readUsers
