@@ -39,7 +39,7 @@ function setRoles(fileName, callback)
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
-		var text = e.target.result;
+		var text = e.target.result.replace(/\"/g, "");
 		var rows = text.split("\n");		
 
 		for (var i = 0; i < rows.length; i++) {
@@ -48,7 +48,7 @@ function setRoles(fileName, callback)
 			// insert data into Tree
 			// -------------------------------
 			
-			var items = rows[i].split(",").replace(/\"/g, "");
+			var items = rows[i].split(",");
 			var id = items[0];
 			var name = items[1];
 			var parent = items[2];
@@ -82,7 +82,7 @@ function setUsers(fileName, callback)
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
-		var text = e.target.result;  
+		var text = e.target.result.replace(/\"/g, "");  
 		var rows = text.split("\n");		
 
 		for (var i = 0; i < rows.length; i++) {
@@ -91,7 +91,7 @@ function setUsers(fileName, callback)
 			// insert data into Tree
 			// -------------------------------
 			
-			var items = rows[i].split(",").replace(/\"/g, "");
+			var items = rows[i].split(",");
 			var id = JSON.parse(items[0]);
 			var name = JSON.parse(items[1]);
 			var role = JSON.parse(items[2]);
