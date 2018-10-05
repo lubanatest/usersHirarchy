@@ -13,10 +13,10 @@
   
   if (userId)
   {
-  var tree = readCSV(function() {
-      tree.print();
-      var path = getSubOrdinators(tree, userId);     
-      alert(path);
+  var roles = readCSV(function() {
+      roles.print();
+      var result = getSubOrdinators(userId, users, roles);     
+      alert(result);
     }); 
     }
   
