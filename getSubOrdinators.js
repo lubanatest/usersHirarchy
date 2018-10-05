@@ -31,9 +31,9 @@ class Role
 /*
  * Read CSV File
  */
-function setRoles(file, callback)
+function setRoles(file)
 {
-	console.log('**');
+	console.log('set Roles');
 	var roles = [];
 	
 	var fileUpload = document.getElementById(file);
@@ -68,9 +68,9 @@ function setRoles(file, callback)
 /*
  * Read CSV File
  */
-function setUsers(file, callback)
+function setUsers(file)
 {
-	console.log('ser Users');
+	console.log('set Users');
 	var users = [];
 	
 	var fileUpload = document.getElementById(file);
