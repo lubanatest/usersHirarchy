@@ -165,7 +165,7 @@ function getSubOrdinators(userId, users, roles) {
     subOrdinators = getUsers(children[i].id, users);
     console.log(subOrdinators);
     for (var j = 0; j < subOrdinators.length; j++) {
-      subOrdinators = [...subOrdinators, getSubOrdinators(subOrdinators[j].id, users, roles)];
+      // subOrdinators = [...subOrdinators, getSubOrdinators(subOrdinators[j].id, users, roles)];
     }
   }
   
