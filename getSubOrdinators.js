@@ -64,6 +64,15 @@ function setRoles(fileName, callback)
 		}
 	callback(roles); 
 }
+	reader.onerror = function (e){
+		if(e.target.error.name == "NotReadableError") {
+			alert("Canno't read file !");
+		}
+		
+	};
+	
+	reader.readAsText(fileUpload.files[0]);
+	return roles;
 };
 
 /*
@@ -100,6 +109,16 @@ function setUsers(fileName, callback)
 		//return users;
 		callback(users); 
 }
+	
+	reader.onerror = function (e){
+		if(e.target.error.name == "NotReadableError") {
+			alert("Canno't read file !");
+		}
+		
+	};
+	
+	reader.readAsText(fileUpload.files[0]);
+	return users;
 };
 
 /*
