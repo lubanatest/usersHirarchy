@@ -70,7 +70,7 @@ function setRoles(fileName, callback)
 		}
 		
 	};
-	
+	if (fileUpload)
 	reader.readAsText(fileUpload.files[0]);
 	return roles;
 };
@@ -108,7 +108,7 @@ function setUsers(fileName, callback)
 		}
 		//return users;
 		callback(users); 
-}
+};
 	
 	reader.onerror = function (e){
 		if(e.target.error.name == "NotReadableError") {
@@ -116,7 +116,7 @@ function setUsers(fileName, callback)
 		}
 		
 	};
-	
+	if (fileUpload)
 	reader.readAsText(fileUpload.files[0]);
 	return users;
 };
