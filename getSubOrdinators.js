@@ -49,9 +49,9 @@ function setRoles(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = items[0];
-			var name = items[1];
-			var parent = items[2];
+			var id = JSON.parse(items[0]);
+			var name = JSON.parse(items[1]);
+			var parent = JSON.parse(items[2]);
 			
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
@@ -92,9 +92,9 @@ function setUsers(fileName, callback)
 			// -------------------------------
 			
 			var items = rows[i].split(",");
-			var id = items[0];
-			var name = items[1];
-			var role = items[2];
+			var id = JSON.parse(items[0]);
+			var name = JSON.parse(items[1]);
+			var role = JSON.parse(items[2]);
 			
 			if (id != "") {				 
 				var user = new User(id, name, role);
@@ -120,9 +120,10 @@ function setUsers(fileName, callback)
  */
  
  function getRoleId(userId, users) {
-  var item = users.find(user => user.id === userId);
+  var item = users.find(user => user.id == userId);
   if (item)
     return item.role;
+  console.log('The user is not found');
  };
  
  /*
