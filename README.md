@@ -13,12 +13,13 @@
   
   if (userId)
   {
-  var roles = readCSV(function() {
-      roles.print();
+  var roles = setRoles(roles);
+  var users = setusers(users);
+ 
+      console.log(roles);
+      console.log(users);
       var result = getSubOrdinators(userId, users, roles);     
-      alert(result);
-    }); 
-    }
+      console.log(result);
   
    } 
 </script>
