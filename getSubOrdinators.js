@@ -14,9 +14,11 @@
   * Get the Children roles of a role
   */
   function getChildren(roleId, roles) {
+	  console.log(roleId);
+	  console.log('*');
     var children = roles.filter(role => role.parent === roleId);
     for (var i = 0; i < children.length; i++) {
-	    children = children.concat(getChildren(children[i].id, roles)).unique();
+	    children = children.concat(getChildren(children[i].id, roles));
     }  
     if (children)
       return children;
@@ -53,7 +55,7 @@ function getSubOrdinators(userId, users, roles) {
     subOrdinators = getUsers(children[i].id, users);
     console.log(subOrdinators);
 	  
-    results = results.concat(subOrdinators).unique();
+    results = results.concat(subOrdinators);
     console.log(results);
   }
   
