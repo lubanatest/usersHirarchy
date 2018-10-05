@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
-    
+    <script type="text/javascript" src="getSubOrdinators.js"></script>
     <script>
   
   function getResults() {
@@ -50,7 +50,7 @@
     <div id="fromError" ng-show="myForm.userID.$invalid">required</div></td>
   </tr>
    
-  <tr><td  colspan="2"><input type="button" onclick="getSubOrdinates()" value="Get SubOrdinators" /></td></tr>
+  <tr><td  colspan="2"><input type="button" onclick="getResults()" value="Get SubOrdinators" /></td></tr>
   
   </table>
   
