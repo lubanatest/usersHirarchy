@@ -58,7 +58,7 @@ function setRoles(fileName, callback)
 				roles.push(role);
 			}
 		}
-		return callback(roles); 
+		roles = callback(roles); 
 	};
 	reader.onerror = function (e) {
 		if(e.target.error.name == "NotReadableError") {
@@ -101,7 +101,7 @@ function setUsers(fileName, callback)
 				users.push(user);
 			}
 		}
-		return callback(users); 
+		users = callback(users); 
 	};
 	
 	reader.onerror = function (e){
