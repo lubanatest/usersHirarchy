@@ -33,6 +33,7 @@ class Role
  */
 function setRoles(file, callback)
 {
+	console.log('**');
 	var roles = [];
 	
 	var fileUpload = document.getElementById(file);
@@ -69,6 +70,7 @@ function setRoles(file, callback)
  */
 function setUsers(file, callback)
 {
+	console.log('ser Users');
 	var users = [];
 	
 	var fileUpload = document.getElementById(file);
