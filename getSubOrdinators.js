@@ -18,7 +18,7 @@ class User
 // ----------------------------------
 class Role 
 {
-	/*
+  /*
    * Constructor
    */
 	constructor(id, name, parent){
@@ -36,13 +36,10 @@ function setRoles(fileName, callback)
 	console.log('set Roles');
 	var roles = [];
 	var fileUpload = document.getElementById(fileName);
-	console.log(fileUpload);
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
 		var text = e.target.result;
-		console.log('**');
-		console.log(text);
 		var rows = text.split("\n");		
 
 		for (var i = 0; i < rows.length; i++) {
@@ -56,22 +53,21 @@ function setRoles(fileName, callback)
 			var name = items[1];
 			var parent = items[2];
 			
-			if (id!="") {				 
+			if (id != "") {				 
 				var role = new Role(id, name, parent);
 				roles.push(role);
 			}
-			// -------------------------------
 		}
-	callback(roles); 
-}
-	reader.onerror = function (e){
+		callback(roles); 
+	};
+	reader.onerror = function (e) {
 		if(e.target.error.name == "NotReadableError") {
-			alert("Canno't read file !");
+			alert("Cann't read file!");
 		}
 		
 	};
 	if (fileUpload)
-	reader.readAsText(fileUpload.files[0]);
+		reader.readAsText(fileUpload.files[0]);
 	return roles;
 };
 
@@ -100,15 +96,13 @@ function setUsers(fileName, callback)
 			var name = items[1];
 			var role = items[2];
 			
-			if (id!="") {				 
+			if (id != "") {				 
 				var user = new User(id, name, role);
-        users.push(user);
+				users.push(user);
 			}
-			// -------------------------------
 		}
-		//return users;
 		callback(users); 
-};
+	};
 	
 	reader.onerror = function (e){
 		if(e.target.error.name == "NotReadableError") {
@@ -117,7 +111,7 @@ function setUsers(fileName, callback)
 		
 	};
 	if (fileUpload)
-	reader.readAsText(fileUpload.files[0]);
+		reader.readAsText(fileUpload.files[0]);
 	return users;
 };
 
