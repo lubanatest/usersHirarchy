@@ -13,13 +13,77 @@ class Role
 	}
 }
 
+// ----------------------------------
+// class Node
+// ----------------------------------
+function Node(role) {
+    this.role = role;
+    this.children = [];
+}
+
+// ----------------------------------
+// class Tree
+// ----------------------------------
+function Tree() {
+  this.root = null;
+}
+	
+Tree.prototype.add = function(role) {
+  var node = new Node(role);
+  var parent = this.findBFS(role.parent);
+  if(parent) {
+    parent.children.push(node);
+  } else {
+    if(!this.root) {
+      this.root = node;
+    } else {
+      return 'Root node is already assigned';
+    }
+  }
+};
+
+Tree.prototype.findBFS = function(role) {
+  var queue = [this.root];
+  while(queue.length) {
+    var node = queue.shift();
+    if(node.role === role) {
+      return node;
+    }
+    for(var i = 0; i < node.children.length; i++) {
+      queue.push(node.children[i]);
+    }
+  }
+  return null;
+};
+
+Tree.prototype.print = function() {
+  var data = "Roles Tree";
+  if(!this.root) {
+	return console.log('No root node found');
+  }
+  var newline = new Node('|');
+  var queue = [this.root, newline];
+  var string = '';
+  while(queue.length) {
+    var node = queue.shift();
+    string += node.role.name + ' ';
+    if(node === newline && queue.length) {
+      queue.push(newline);
+    }
+    for(var i = 0; i < node.children.length; i++) {
+      queue.push(node.children[i]);
+    }
+  }
+  console.log(string.slice(0, -2).trim());
+};
+
 /*
  * Read CSV File
  */
 function setRoles(fileName, callback)
 {
 	console.log('set Roles');
-	var roles = [];
+	var roles = new Tree();
 	var fileUpload = document.getElementById(fileName);
 	var reader = new FileReader();
 		
@@ -40,7 +104,7 @@ function setRoles(fileName, callback)
 			
 			if (id != "") {				 
 				var role = new Role(id, name, parent);
-				roles.push(role);
+				roles.add(role);
 			}
 		}
 		roles = callback(roles); 
