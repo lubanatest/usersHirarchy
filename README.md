@@ -5,30 +5,25 @@
     <script type="text/javascript" src="getSubOrdinators.js"></script>
     <script>
   
-  function getResults() {
-  var rolesFile = document.forms["myForm"]["roles"].value;
-  var usersFile = document.forms["myForm"]["users"].value;
-  
-  var userId = parseInt(document.forms["myForm"]["userId"].value);
-  
-  if (userId)
-  {
-  var roles = setRoles('roles', function(roles) { console.log(roles); });
-  var users = setUsers('users', function(users) { console.log(users); });
-  
-      /*if (users !== undefined && roles !== undefined) {
-      var result = getSubOrdinators(userId, users, roles);     
-      console.log(result);
-      } else {
-      console.log('error in the data');
-      }*/
-   } 
-   }
-</script>
+      function getResults() {
+        var userId = parseInt(document.forms["myForm"]["userId"].value);
 
+        if (userId)
+        {
+          var roles = setRoles('roles', function(roles) { console.log(roles); });
+          var users = setUsers('users', function(users) { console.log(users); });
+
+          if (users !== undefined && roles !== undefined) {
+          var result = getSubOrdinators(userId, users, roles);     
+            console.log(result);
+          } else {
+            console.log('error in the data');
+          }
+         } 
+       }
+    </script>
   </head>
   <body>
-    
 <h3>Users Hirarchy</h3>
 
 <h3>Please enter the following information:</h3>
