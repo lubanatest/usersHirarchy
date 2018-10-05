@@ -14,7 +14,7 @@
   if (userId)
   {
   var roles = setRoles(roles);
-  var users = setusers(users);
+  var users = setUsers(users);
  
       console.log(roles);
       console.log(users);
