@@ -3,7 +3,7 @@
 // ----------------------------------
 class User 
 {
-	/*
+  /*
    * Constructor
    */
 	constructor(id, name, role){
@@ -60,6 +60,7 @@ function setRoles(file, callback)
 			// -------------------------------
 		}
 		// callback(graph); 
+}
 };
 
 /*
