@@ -31,14 +31,10 @@ class Role
 /*
  * Read CSV File
  */
-function setRoles(file, callback)
+function setRoles(callback)
 {
 	console.log('set Roles');
-	console.log(file);
 	var roles = [];
-	
-	var fileUpload = document.getElementById(file);
-	console.log(fileUpload);
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
@@ -64,19 +60,17 @@ function setRoles(file, callback)
 			}
 			// -------------------------------
 		}
-	return roles; 
+	return callback(roles); 
 }
 };
 
 /*
  * Read CSV File
  */
-function setUsers(file, callback)
+function setUsers(callback)
 {
 	console.log('set Users');
 	var users = [];
-	
-	var fileUpload = document.getElementById(file);
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
@@ -100,8 +94,8 @@ function setUsers(file, callback)
 			}
 			// -------------------------------
 		}
-		return users;
-		// callback(graph); 
+		//return users;
+		callback(users); 
 }
 };
 
