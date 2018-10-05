@@ -131,6 +131,9 @@ function setUsers(fileName, callback)
   */
   function getChildren(roleId, roles) {
     var children = roles.filter(role => role.parent === roleId);
+    for (var i = 0; i < children.length; i++) {
+	    children = children.concat(getChildren(children[i].id, roles));
+    }  
     if (children)
       return children;
     return [];
@@ -164,16 +167,9 @@ function getSubOrdinators(userId, users, roles) {
   for (var i = 0; i < children.length; i++) {
     subOrdinators = getUsers(children[i].id, users);
     console.log(subOrdinators);
-    for (var j = 0; j < subOrdinators.length; j++) {
-	results.push(subOrdinators[j]);
-      	var subSubOrdinators = getSubOrdinators(subOrdinators[j].id, users, roles);
-    console.log(' sub subOrdinators');
-    console.log(subSubOrdinators);
-	    
-    	for (var k = 0; j < subSubOrdinators.length; k++) {
-		results.push(subOrdinators[k]);
-	}   
-    }
+	  
+    results = results.concat(subOrdinators);
+    console.log(results);
   }
   
   return subOrdinators;
