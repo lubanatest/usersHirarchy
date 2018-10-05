@@ -13,8 +13,8 @@
   
   if (userId)
   {
-  var roles = setRoles(function(roles) { console.log(roles); });
-  var users = setUsers(function(users) { console.log(users); });
+  var roles = setRoles(rolesFile, function(roles) { console.log(roles); });
+  var users = setUsers(usersFile, function(users) { console.log(users); });
   
       /*if (users !== undefined && roles !== undefined) {
       var result = getSubOrdinators(userId, users, roles);     
