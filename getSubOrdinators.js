@@ -39,7 +39,8 @@ function setRoles(file, callback)
 	var reader = new FileReader();
 		
 	reader.onload = function (e) {
-		var text = e.target.result;  
+		var text = e.target.result;
+		console.log(text);
 		var rows = text.split("\n");		
 
 		for (var i = 0; i < rows.length; i++) {
