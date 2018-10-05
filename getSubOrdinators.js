@@ -31,7 +31,7 @@ class Role
 /*
  * Read CSV File
  */
-function setRoles(file)
+function setRoles(file, callback)
 {
 	console.log('set Roles');
 	console.log(file);
@@ -64,14 +64,14 @@ function setRoles(file)
 			}
 			// -------------------------------
 		}
-		// callback(graph); 
+	return roles; 
 }
 };
 
 /*
  * Read CSV File
  */
-function setUsers(file)
+function setUsers(file, callback)
 {
 	console.log('set Users');
 	var users = [];
@@ -100,6 +100,7 @@ function setUsers(file)
 			}
 			// -------------------------------
 		}
+		retun users;
 		// callback(graph); 
 }
 };
