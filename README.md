@@ -5,16 +5,24 @@
     <script type="text/javascript" src="getSubOrdinators.js"></script>
     <script>
   
+  var roles = [];
+    var user = [];
+    
+  function readRoles() {
+          setRoles('roles', function(results) { console.log(results); roles = results;});
+  }
+  
+  function readUsers() {
+          setUsers('users', function(results) { console.log(results); users = results;});
+  }
+  
       function getResults() {
         var userId = parseInt(document.forms["myForm"]["userId"].value);
 
         if (userId)
         {
-          var roles = [];
-          var user = [];
-          setRoles('roles', function(results) { console.log(results); roles = results;});
-          setUsers('users', function(results) { console.log(results); users = results;});
-
+            console.log('**');
+      
           if (users !== undefined && roles !== undefined && roles.length > 0 && users.length > 0) {
           var result = getSubOrdinators(userId, users, roles);    
             console.log('results');
@@ -35,12 +43,12 @@
   <table style="width:100%">
    <tr>
    <td >CSV File for Roles:</td>
-   <td ><input type="file" name="roles" id="roles" onchange="" ng-model="roles" required/>
+   <td ><input type="file" name="roles" id="roles" onchange="readRoles()" ng-model="roles" required/>
    </td>
   </tr>
   <tr>
    <td >CSV File for Users:</td>
-   <td ><input type="file" name="users" id="users" onchange="" required/>
+   <td ><input type="file" name="users" id="users" onchange="readUsers()" required/>
    </td>
   </tr>
   <tr>
