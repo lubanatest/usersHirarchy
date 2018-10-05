@@ -48,7 +48,7 @@
   </tr>
   <tr>
    <td >User ID: </td>
-   <td ><input type="text" name="userId" ng-model="from" required>
+   <td ><input type="text" name="userId" ng-model="from" value="3" required>
     <div id="fromError" ng-show="myForm.userID.$invalid">required</div></td>
   </tr>
    
