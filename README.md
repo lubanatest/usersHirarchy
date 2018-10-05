@@ -13,7 +13,7 @@
           var roles = setRoles('roles', function(results) { console.log(results); return results;});
           var users = setUsers('users', function(results) { console.log(results); return results;});
 
-          if (users !== undefined && roles !== undefined && role.length > 0 && users.length > 0) {
+          if (users !== undefined && roles !== undefined && roles.length > 0 && users.length > 0) {
           var result = getSubOrdinators(userId, users, roles);    
             console.log('results');
             console.log(result);
