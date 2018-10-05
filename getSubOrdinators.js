@@ -101,9 +101,9 @@ function setUsers(file, callback)
  */
  
  function getRoleId(userId, users) {
-  var user = users.find(user => user.id === userId);
-  if (user)
-    return user.role;
+  var item = users.find(user => user.id === userId);
+  if (item)
+    return item.role;
  };
  
  /*
