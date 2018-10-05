@@ -10,11 +10,12 @@
 
         if (userId)
         {
-          var roles = setRoles('roles', function(roles) { console.log(roles); });
-          var users = setUsers('users', function(users) { console.log(users); });
+          var roles = setRoles('roles', function(results) { console.log(results); return results;});
+          var users = setUsers('users', function(results) { console.log(results); return results;});
 
-          if (users !== undefined && roles !== undefined) {
-          var result = getSubOrdinators(userId, users, roles);     
+          if (users !== undefined && roles !== undefined && role.length > 0 && users.length > 0) {
+          var result = getSubOrdinators(userId, users, roles);    
+            console.log('results');
             console.log(result);
           } else {
             console.log('error in the data');
