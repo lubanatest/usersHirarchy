@@ -172,7 +172,7 @@ function getSubOrdinators(userId, users, roles) {
     console.log(results);
   }
   
-  return subOrdinators;
+  return results;
 }
 // ----------------------------------
 
