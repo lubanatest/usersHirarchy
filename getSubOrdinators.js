@@ -100,7 +100,7 @@ function setUsers(file, callback)
 			}
 			// -------------------------------
 		}
-		retun users;
+		return users;
 		// callback(graph); 
 }
 };
