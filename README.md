@@ -2,6 +2,27 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
+    
+    <script>
+  
+  function getResults() {
+  var roles = document.forms["myForm"]["roles"].value;
+  var users = document.forms["myForm"]["users"].value;
+  
+  var userId = parseInt(document.forms["myForm"]["userId"].value);
+  
+  if (userId)
+  {
+  var tree = readCSV(function() {
+      tree.print();
+      var path = getSubOrdinators(tree, userId);     
+      alert(path);
+    }); 
+    }
+  
+   } 
+</script>
+
   </head>
   <body>
     
