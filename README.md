@@ -6,19 +6,19 @@
     <script>
   
   function getResults() {
-  var roles = document.forms["myForm"]["roles"].value;
-  var users = document.forms["myForm"]["users"].value;
+  var rolesFile = document.forms["myForm"]["roles"].value;
+  var usersFile = document.forms["myForm"]["users"].value;
   
   var userId = parseInt(document.forms["myForm"]["userId"].value);
   
   if (userId)
   {
-  var roles = setRoles(roles);
-  var users = setUsers(users);
+  var roles = setRoles(rolesFile);
+  var users = setUsers(usersFile);
  
       console.log(roles);
       console.log(users);
-      if (users && roles) {
+      if (users !== undefined && roles !== undefined) {
       var result = getSubOrdinators(userId, users, roles);     
       console.log(result);
       } else {
