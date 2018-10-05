@@ -100,31 +100,31 @@ function setUsers(file, callback)
  * Get Role Id of a user
  */
  
- getRoleId(userId, users) {
+ function getRoleId(userId, users) {
   var user = users.find(user => user.id === userId);
   if (user)
     return user.role;
- }
+ };
  
  /*
   * Get the Children roles of a role
   */
-  getChildren(roleId, roles) {
+  function getChildren(roleId, roles) {
     var children = roles.filter(role => role.parent === roleId);
     if (children)
       return children;
     return [];
-  }
+  };
  
  /*
   * Get the users of a role
   */
-  getUsers(roleId, users) {
+  function getUsers(roleId, users) {
     var subordinators = users.filter(user => user.role === roleId);
     if (subordinators)
       return subordinators;
     return [];
-  }
+  };
  
 /*
  * Recursive Function to get a user subordinators.
