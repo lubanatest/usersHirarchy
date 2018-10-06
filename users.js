@@ -64,19 +64,32 @@ function createTable(tableData) {
   var table = document.createElement('table');
   var tableBody = document.createElement('tbody');
 
+  var row = document.createElement('tr');
+  var cell = document.createElement('td');
+  cell.appendChild(document.createTextNode('ID'));
+  row.appendChild(cell);
+
+  cell = document.createElement('td');
+  cell.appendChild(document.createTextNode('Name'));
+  row.appendChild(cell);
+
+  cell = document.createElement('td');
+  cell.appendChild(document.createTextNode('Role'));
+  row.appendChild(cell);
+
   tableData.forEach(function(rowData) {
-    var row = document.createElement('tr');
-      var cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(rowData.id));
-      row.appendChild(cell);
+    row = document.createElement('tr');
+    cell = document.createElement('td');
+    cell.appendChild(document.createTextNode(rowData.id));
+    row.appendChild(cell);
 
-      cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(rowData.name));
-      row.appendChild(cell);
+    cell = document.createElement('td');
+    cell.appendChild(document.createTextNode(rowData.name));
+    row.appendChild(cell);
 
-      cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(rowData.role));
-      row.appendChild(cell);
+    cell = document.createElement('td');
+    cell.appendChild(document.createTextNode(rowData.role));
+    row.appendChild(cell);
 
     tableBody.appendChild(row);
   });
@@ -84,6 +97,6 @@ function createTable(tableData) {
   table.appendChild(tableBody);
   var label = document.createElement('h3');
   label.innerHTML = 'Results';
-  document.getElementById('table').appendChild(label);
+  document.getElementById('table').innerHTML = label;
   document.getElementById('table').appendChild(table);
 }
