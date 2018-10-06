@@ -1,6 +1,11 @@
 
 <html>
   <head>
+    <style>
+      td {
+      text-align : left;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
     <script type="text/javascript" src="getSubOrdinators.js"></script>
     <script type="text/javascript" src="roles.js"></script>
@@ -52,7 +57,7 @@
 <h3>Please enter the following information:</h3>
  
  <form name="myForm">
-  <table style="{width:100%; text-align: 'left';}">
+  <table>
    <tr>
    <td >CSV File for Roles:</td>
    <td ><input type="file" name="roles" id="roles" onchange="readRoles()" ng-model="roles" required/>
