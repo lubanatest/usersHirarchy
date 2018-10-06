@@ -67,17 +67,19 @@
    <tr>
    <td >CSV File for Roles:</td>
    <td ><input type="file" name="roles" id="roles" onchange="readRoles()" ng-model="roles" required/>
+    <div id="rolesError" ng-show="myForm.roles.$invalid">required</div></td>
    </td>
   </tr>
   <tr>
    <td >CSV File for Users:</td>
-   <td ><input type="file" name="users" id="users" onchange="readUsers()" required/>
+   <td ><input type="file" name="users" id="users" onchange="readUsers()" ng-model="users" required/>
+    <div id="usersError" ng-show="myForm.users.$invalid">required</div></td>
    </td>
   </tr>
   <tr>
    <td >User ID: </td>
    <td ><input type="text" name="userId" ng-model="userId" value="1" required>
-    <div id="fromError" ng-show="myForm.userID.$invalid">required</div></td>
+    <div id="userIdError" ng-show="myForm.userId.$invalid">required</div></td>
   </tr>
    
   <tr><td  colspan="2"><input type="button" onclick="getResults()" value="Get SubOrdinators" /></td></tr>
