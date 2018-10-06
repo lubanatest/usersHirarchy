@@ -29,9 +29,7 @@
   */
   function getUsers(roleId, users) {
     var subordinators = users.filter(user => user.role === roleId);
-    if (subordinators)
       return subordinators;
-    return [];
   };
  
 /*
@@ -47,6 +45,7 @@ function getSubOrdinators(userId, users, roles) {
 	
   // Get the Children roles of a role
   var children = getChildren(roleId, roles);
+  console.log('Children roles');
   console.log(children);
 	
   // For each child role get the users
