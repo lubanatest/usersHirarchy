@@ -15,7 +15,7 @@ class Role {
 // ----------------------------------
 // class Node
 // ----------------------------------
-class Node(role) {
+function Node(role) {
     this.role = role;
     this.children = [];
 }
