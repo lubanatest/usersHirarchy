@@ -63,13 +63,12 @@ Tree.prototype.print = function() {
   if(!this.root) {
 	return console.log('No root node found');
   }
-  var newline = new Node('|');
-  var queue = [this.root, newline];
+  var queue = [this.root];
   while(queue.length) {
     var node = queue.shift();
     string += node.role.name + ' ';
-    if(node === newline && queue.length) {
-      queue.push(newline);
+    if(queue.length) {
+      string += '|';
     }
     for(var i = 0; i < node.children.length; i++) {
       string += '\n';
