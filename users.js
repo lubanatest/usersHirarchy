@@ -1,6 +1,10 @@
-// ----------------------------------
-// class User
-// ----------------------------------
+/*****************************************/
+/* This File includes all the functions  */
+/* related to Users.                     */
+/*****************************************/
+/*
+ * class User
+ */
 class User 
 {
   /*
@@ -30,9 +34,7 @@ function setUsers(fileName, callback)
 		for (var i = 0; i < rows.length; i++) {
 			
 			// For each line in the CSV File:
-			// insert data into Tree
-			// -------------------------------
-			
+			// add user object into the users array
 			var items = rows[i].split(",");
 			var id = items[0];
 			var name = items[1];
