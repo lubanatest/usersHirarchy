@@ -100,7 +100,7 @@ function createTable(tableData, userName) {
 
   table.appendChild(tableBody);
   var label = document.createElement('h3');
-  label.innerHTML = 'Sub and SubOrdinators for user ' + userName;
+  label.innerHTML = 'SubOrdinators of ' + userName;
   document.getElementById('table').innerHTML = '';
   document.getElementById('table').appendChild(label);
   document.getElementById('table').appendChild(table);
