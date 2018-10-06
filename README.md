@@ -73,6 +73,9 @@
   
   </table>
   
+  <div id='table'>
+  </div>
+  
  </form>
  </body>
 
