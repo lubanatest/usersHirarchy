@@ -29,9 +29,8 @@ function Tree() {
 	
 Tree.prototype.add = function(role) {
   var node = new Node(role);
-  var parent = this.findBFS(role.parent);
+  var parent = this.find(role.parent);
   if(parent) {
-	  console.log(parent.role.name);
     parent.children.push(node);
   } else {
     if(!this.root) {
@@ -42,7 +41,7 @@ Tree.prototype.add = function(role) {
   }
 };
 
-Tree.prototype.findBFS = function(role) {
+Tree.prototype.find = function(role) {
   if (this.root === null)
 	return null;
   var queue = [this.root];
@@ -71,7 +70,7 @@ Tree.prototype.print = function() {
       string += '|';
     }
     for(var i = 0; i < node.children.length; i++) {
-      string += '\n';
+      string += ' \n ';
       queue.push(node.children[i]);
     }
   }
