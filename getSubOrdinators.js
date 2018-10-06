@@ -19,9 +19,11 @@
 	  var children = [];
 	  if (node)
 		  children = node.children;
-    for (var i = 0; i < children.children.length; i++) {
-	    console.log(children.children[i].role.id);
-	    children = children.concat(getChildren(children[i].children.role.id, roles));
+	  console.log('*');
+	  consosle.log(children);
+    for (var i = 0; i < children.length; i++) {
+	    console.log(children[i].role.id);
+	    children = children.concat(getChildren(children[i].role.id, roles));
     }  
     return children;
   };
