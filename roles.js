@@ -59,13 +59,12 @@ Tree.prototype.findBFS = function(role) {
 };
 
 Tree.prototype.print = function() {
-  var data = "Roles Tree";
+  var string = "Roles Tree \n";
   if(!this.root) {
 	return console.log('No root node found');
   }
   var newline = new Node('|');
   var queue = [this.root, newline];
-  var string = '';
   while(queue.length) {
     var node = queue.shift();
     string += node.role.name + ' ';
@@ -73,10 +72,11 @@ Tree.prototype.print = function() {
       queue.push(newline);
     }
     for(var i = 0; i < node.children.length; i++) {
+      string += '\n';
       queue.push(node.children[i]);
     }
   }
-  console.log(string.slice(0, -2).trim());
+  console.log(string.trim());
 };
 
 /*
