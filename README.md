@@ -15,7 +15,7 @@
        * Read CSV File and save the data into array
        */
       function readRoles() {
-              setRoles('roles', function(results) { console.log(results.print()); roles = results;});
+              setRoles('roles', function(results) { roles = results; roles.print();});
       }
       /*
        * readUsers
