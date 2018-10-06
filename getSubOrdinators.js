@@ -21,7 +21,7 @@
 	  if (node)
 		  children = node.children;
     for (var i = 0; i < children.length; i++) {
-	    children = children.concat(getChildren(children[i].id, roles));
+	    children = children.concat(getChildren(children[i].role.id, roles));
     }  
     return children;
   };
