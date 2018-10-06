@@ -9,6 +9,7 @@
       th {
         text-align : left;
         font-weight: bold;
+        padding: 5px;
       }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> 
