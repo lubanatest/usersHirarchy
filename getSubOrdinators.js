@@ -20,7 +20,7 @@
 	  if (node)
 		  children = node.children;
 	  console.log('*');
-	  consosle.log(children);
+	  console.log(children);
     for (var i = 0; i < children.length; i++) {
 	    console.log(children[i].role.id);
 	    children = children.concat(getChildren(children[i].role.id, roles));
