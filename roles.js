@@ -1,6 +1,11 @@
-// ----------------------------------
-// class Role
-// ----------------------------------
+/*****************************************/
+/* This File includes all the functions  */
+/* related to Roles.                     */
+/*****************************************/
+
+/*
+ * class Role
+ */
 class Role {
   /*
    * Constructor
@@ -12,17 +17,17 @@ class Role {
 	}
 }
 
-// ----------------------------------
-// class Node
-// ----------------------------------
+/*
+ * class Node
+ */
 function Node(role) {
     this.role = role;
     this.children = [];
 }
 
-// ----------------------------------
-// class Tree
-// ----------------------------------
+/*
+ * class Tree
+ */
 function Tree() {
   this.root = null;
 }
@@ -116,6 +121,7 @@ function setRoles(fileName, callback)
 				roles.add(role);
 			}
 		}
+		// Call Callback function:
 		roles = callback(roles); 
 	};
 	reader.onerror = function (e) {
@@ -128,3 +134,5 @@ function setRoles(fileName, callback)
 		reader.readAsText(fileUpload.files[0]);
 	return roles;
 };
+
+/*****************************************/
