@@ -75,12 +75,16 @@ function createTable(tableData) {
       row.appendChild(cell);
 
       cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(rowData.parent));
+      cell.appendChild(document.createTextNode(rowData.role));
       row.appendChild(cell);
 
     tableBody.appendChild(row);
   });
 
   table.appendChild(tableBody);
+  var label = document.createElement('h3');
+  label.innerHTML = 'Results';
+  document.getElementById('table').appendChild(label);
+  document.getElementById('table').appendChild('<br/>');
   document.getElementById('table').appendChild(table);
 }
