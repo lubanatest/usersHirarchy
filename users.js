@@ -57,6 +57,9 @@ function setUsers(fileName, callback)
 	return users;
 };
 
+/*
+ * Print Array of Users into HTML Table
+ */
 function createTable(tableData) {
   var table = document.createElement('table');
   var tableBody = document.createElement('tbody');
