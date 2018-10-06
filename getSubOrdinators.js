@@ -23,7 +23,7 @@
 	  console.log(children);
     for (var i = 0; i < children.length; i++) {
 	    console.log(children[i].role.id);
-	    children = children.concat(getChildren(children[i].role.id, roles));
+	    children = [...new Set[children.concat(getChildren(children[i].role.id, roles))];
     }  
     return children;
   };
