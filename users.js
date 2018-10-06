@@ -66,7 +66,7 @@ function createTable(tableData) {
 
     // rowData.forEach(function(cellData) {
       var cell = document.createElement('td');
-      cell.appendChild(document.createTextNode(cellData.name));
+      cell.appendChild(document.createTextNode(rowData.name));
       row.appendChild(cell);
     //});
 
