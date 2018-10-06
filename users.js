@@ -85,6 +85,5 @@ function createTable(tableData) {
   var label = document.createElement('h3');
   label.innerHTML = 'Results';
   document.getElementById('table').appendChild(label);
-  document.getElementById('table').appendChild('<br/>');
   document.getElementById('table').appendChild(table);
 }
