@@ -62,7 +62,7 @@ function setUsers(fileName, callback)
 /*
  * Display Array of Users in HTML Table
  */
-function createTable(tableData) {
+function createTable(tableData, userName) {
   var table = document.createElement('table');
   var tableBody = document.createElement('tbody');
 
@@ -100,7 +100,7 @@ function createTable(tableData) {
 
   table.appendChild(tableBody);
   var label = document.createElement('h3');
-  label.innerHTML = 'Results';
+  label.innerHTML = 'Sub and SubOrdinators for user ' + userName;
   document.getElementById('table').innerHTML = '';
   document.getElementById('table').appendChild(label);
   document.getElementById('table').appendChild(table);
