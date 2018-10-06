@@ -1,8 +1,7 @@
 // ----------------------------------
 // class Role
 // ----------------------------------
-class Role 
-{
+class Role {
   /*
    * Constructor
    */
@@ -16,7 +15,7 @@ class Role
 // ----------------------------------
 // class Node
 // ----------------------------------
-function Node(role) {
+class Node(role) {
     this.role = role;
     this.children = [];
 }
@@ -31,6 +30,7 @@ function Tree() {
 Tree.prototype.add = function(role) {
   var node = new Node(role);
   var parent = this.findBFS(role.parent);
+	console.log(parent.role.name);
   if(parent) {
     parent.children.push(node);
   } else {
