@@ -64,11 +64,11 @@ function createTable(tableData) {
   tableData.forEach(function(rowData) {
     var row = document.createElement('tr');
 
-    rowData.forEach(function(cellData) {
+    // rowData.forEach(function(cellData) {
       var cell = document.createElement('td');
       cell.appendChild(document.createTextNode(cellData.name));
       row.appendChild(cell);
-    });
+    //});
 
     tableBody.appendChild(row);
   });
