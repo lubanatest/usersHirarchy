@@ -66,12 +66,17 @@ function createTable(tableData) {
 
   tableData.forEach(function(rowData) {
     var row = document.createElement('tr');
-
-    // rowData.forEach(function(cellData) {
       var cell = document.createElement('td');
+      cell.appendChild(document.createTextNode(rowData.id));
+      row.appendChild(cell);
+
+      cell = document.createElement('td');
       cell.appendChild(document.createTextNode(rowData.name));
       row.appendChild(cell);
-    //});
+
+      cell = document.createElement('td');
+      cell.appendChild(document.createTextNode(rowData.parent));
+      row.appendChild(cell);
 
     tableBody.appendChild(row);
   });
