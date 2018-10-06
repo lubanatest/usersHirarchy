@@ -70,7 +70,7 @@ Tree.prototype.print = function() {
       string += '|';
     }
     for(var i = 0; i < node.children.length; i++) {
-      string += ' \n';
+      string += '\n';
       queue.push(node.children[i]);
     }
   }
