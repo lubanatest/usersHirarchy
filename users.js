@@ -60,7 +60,7 @@ function setUsers(fileName, callback)
 };
 
 /*
- * Print Array of Users into HTML Table
+ * Display Array of Users in HTML Table
  */
 function createTable(tableData) {
   var table = document.createElement('table');
@@ -101,6 +101,7 @@ function createTable(tableData) {
   table.appendChild(tableBody);
   var label = document.createElement('h3');
   label.innerHTML = 'Results';
-  document.getElementById('table').innerHTML = label;
+  document.getElementById('table').innerHTML = '';
+  document.getElementById('table').appendChild(label);
   document.getElementById('table').appendChild(table);
 }
