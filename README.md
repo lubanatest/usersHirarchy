@@ -52,7 +52,7 @@
 <h3>Please enter the following information:</h3>
  
  <form name="myForm">
-  <table style="width:100%">
+  <table style="{width:100%; text-align: 'left';}">
    <tr>
    <td >CSV File for Roles:</td>
    <td ><input type="file" name="roles" id="roles" onchange="readRoles()" ng-model="roles" required/>
