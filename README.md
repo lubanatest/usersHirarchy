@@ -38,6 +38,7 @@
           var result = getSubOrdinators(userId, users, roles);    
             console.log('results');
             console.log(result);
+            createTable(result);
           } else {
             console.log('error in the data');
           }
