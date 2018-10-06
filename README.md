@@ -34,7 +34,7 @@
 
         if (userId)
         {
-          if (users !== undefined && roles !== undefined && roles.length > 0 && users.length > 0) {
+          if (users !== undefined && roles !== undefined && users.length > 0) {
           var result = getSubOrdinators(userId, users, roles);    
             console.log('results');
             console.log(result);
