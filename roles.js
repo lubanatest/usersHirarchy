@@ -48,7 +48,7 @@ Tree.prototype.findBFS = function(role) {
   var queue = [this.root];
   while(queue.length) {
     var node = queue.shift();
-    if(node.role === role) {
+    if(node.role.id === role) {
       return node;
     }
     for(var i = 0; i < node.children.length; i++) {
