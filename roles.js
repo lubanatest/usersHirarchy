@@ -26,7 +26,10 @@ function Node(role) {
 function Tree() {
   this.root = null;
 }
-	
+
+/*
+ * Add a node to the Tree
+ */
 Tree.prototype.add = function(role) {
   var node = new Node(role);
   var parent = this.find(role.parent);
@@ -41,6 +44,9 @@ Tree.prototype.add = function(role) {
   }
 };
 
+/* 
+ * Find a node in the Tree
+*/
 Tree.prototype.find = function(role) {
   if (this.root === null)
 	return null;
@@ -57,9 +63,12 @@ Tree.prototype.find = function(role) {
   return null;
 };
 
+/*
+ * Print the Tree
+ */
 Tree.prototype.print = function() {
   var string = "Roles Tree \n";
-  if(!this.root) {
+  if (!this.root) {
 	return console.log('No root node found');
   }
   var queue = [this.root];
@@ -70,7 +79,6 @@ Tree.prototype.print = function() {
       string += '|';
     }
     for(var i = 0; i < node.children.length; i++) {
-      string += '\n';
       queue.push(node.children[i]);
     }
   }
@@ -111,7 +119,7 @@ function setRoles(fileName, callback)
 	};
 	reader.onerror = function (e) {
 		if(e.target.error.name == "NotReadableError") {
-			alert("Cann't read file!");
+			console.log("Cann't read file!");
 		}
 		
 	};
