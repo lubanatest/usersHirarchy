@@ -14,14 +14,14 @@
   * Get the Children roles of a role
   */
   function getChildren(roleId, roles) {
-	  console.log(roleId);
-	  console.log('****');
+    console.log(roleId);
     var node = roles.find(roleId);
 	  var children = [];
 	  if (node)
 		  children = node.children;
-    for (var i = 0; i < children.length; i++) {
-	    children = children.concat(getChildren(children[i].role.id, roles));
+    for (var i = 0; i < children.children.length; i++) {
+	    console.log(children.children[i].role.id);
+	    children = children.concat(getChildren(children[i].children.role.id, roles));
     }  
     return children;
   };
