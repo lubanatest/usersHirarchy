@@ -30,8 +30,8 @@ function Tree() {
 Tree.prototype.add = function(role) {
   var node = new Node(role);
   var parent = this.findBFS(role.parent);
-	console.log(parent.role.name);
   if(parent) {
+	  console.log(parent.role.name);
     parent.children.push(node);
   } else {
     if(!this.root) {
