@@ -15,14 +15,15 @@
   */
   function getChildren(roleId, roles) {
 	  console.log(roleId);
-	  console.log('*');
-    var children = roles.filter(role => role.parent === roleId);
+	  console.log('****');
+    var node = roles.find(roleId);
+	  var children = [];
+	  if (node)
+		  children = node.children;
     for (var i = 0; i < children.length; i++) {
 	    children = children.concat(getChildren(children[i].id, roles));
     }  
-    if (children)
-      return children;
-    return [];
+    return children;
   };
  
  /*
