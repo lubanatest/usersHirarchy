@@ -1,3 +1,7 @@
+/*****************************************/
+/* This file includes the main functions */
+/*    to get the user sub oridinators    */
+/*****************************************/
 
 /*
  * Get Role Id of a user
@@ -8,16 +12,17 @@
   if (item)
     return item.role;
   console.log('The user is not found');
+  return null;
  };
  
  /*
-  * Get the Children roles of a role
+  * Recursive Function to Get the Children roles of a role
   */
   function getChildren(roleId, roles) {
     var node = roles.find(roleId);
-	  var children = [];
-	  if (node)
-		  children = node.children;
+    var children = [];
+    if (node)
+	  children = node.children;
     for (var i = 0; i < children.length; i++) {
 	    children = children.concat(getChildren(children[i].role.id, roles));
     }  
@@ -28,15 +33,13 @@
   * Get the users of a role
   */
   function getUsers(roleId, users) {
-    var subordinators = users.filter(user => user.role === roleId);
-      return subordinators;
+    return users.filter(user => user.role === roleId);
   };
  
 /*
- * Recursive Function to get a user subordinators.
+ * Get a user subordinators.
  */
 function getSubOrdinators(userId, users, roles) {
-	console.log('sub ordinators');
   // Initialize the result array
   var results = [];
   
@@ -56,5 +59,5 @@ function getSubOrdinators(userId, users, roles) {
   
   return results;
 }
-// ----------------------------------
 
+/*****************************************/
