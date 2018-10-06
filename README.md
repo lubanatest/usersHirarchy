@@ -4,6 +4,7 @@
     <style>
       td {
         text-align : left;
+        padding: 5px;
       }
       th {
         text-align : left;
