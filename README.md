@@ -82,9 +82,11 @@
   
   </table>
   
+  <br/>
+  <br/>
+  
   <div id='table'>
-  <br/>
-  <br/>
+    <!-- The Results will be displayed here -->
   </div>
   
  </form>
