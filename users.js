@@ -67,18 +67,20 @@ function createTable(tableData) {
   var tableBody = document.createElement('tbody');
 
   var row = document.createElement('tr');
-  var cell = document.createElement('td');
+  var cell = document.createElement('th');
   cell.appendChild(document.createTextNode('ID'));
   row.appendChild(cell);
 
-  cell = document.createElement('td');
+  cell = document.createElement('th');
   cell.appendChild(document.createTextNode('Name'));
   row.appendChild(cell);
 
-  cell = document.createElement('td');
+  cell = document.createElement('th');
   cell.appendChild(document.createTextNode('Role'));
   row.appendChild(cell);
 
+  tableBody.appendChild(row);
+	
   tableData.forEach(function(rowData) {
     row = document.createElement('tr');
     cell = document.createElement('td');
