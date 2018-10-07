@@ -18,4 +18,4 @@ This method searches the tree to find a role by ID.
 ### Print:
 This is a recursive method to print the tree.
 
-<a href="index.html" > example </a>
+<a href="https://lubanatest.github.io/usersHirarchy/" > example </a>
