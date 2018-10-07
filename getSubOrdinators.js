@@ -2,11 +2,14 @@
 /* This file includes the main functions */
 /*    to get the user sub oridinators    */
 /*****************************************/
+
+// The user name is saved to be displayed 
+// with the results 
 var userName = '';
+
 /*
  * Get Role Id of a user
  */
- 
  function getRoleId(userId, users) {
   var item = users.find(user => user.id == userId);
   userName = item.name;
